@@ -36,14 +36,13 @@
     transform: rotate(360deg);
   }
 }
-<<<<<<< Updated upstream
-=======
 
 .main{
   height: 1000px;
   width: 100%;
   /* background-color: yellow; */
   background:linear-gradient(45deg,#282A3A,#404258);
+  overflow-x: auto;
 }
 .search{
 display: flex;
@@ -176,4 +175,3 @@ p{
 
 
 
->>>>>>> Stashed changes
