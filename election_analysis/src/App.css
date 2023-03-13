@@ -36,3 +36,144 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< Updated upstream
+=======
+
+.main{
+  height: 1000px;
+  width: 100%;
+  /* background-color: yellow; */
+  background:linear-gradient(45deg,#282A3A,#404258);
+}
+.search{
+display: flex;
+align-items: center;
+justify-content: center;
+/* margin-top:20px ; */
+padding-top: 20px;
+}
+form{
+  background: #fff;
+  width: 600px;
+  height: 50px;
+  display: flex;
+
+}
+form input{
+  flex:1;
+  border: none;
+  outline: none;
+
+}
+form button{
+  background: tomato;
+  padding: 15px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .fa-search{
+  align-self: center;
+  padding: 10px 20px;
+  color:#777;
+
+}
+.blue-part{
+  height: 500px;
+  /* border: 20px red; */
+}
+ .response{
+  float: right;
+  width: 84%;
+  margin-top: 40px;
+  margin-left: 5px;;
+  /* border: 1px solid red; */
+  /* align-items: center; */
+  /* color:#94B49F; */
+  /* text-align: center; */
+  /* background-color: red; */
+  color:#FFFBE9;
+  
+} 
+th,td{
+  text-align: center;
+}
+/* 
+th,td{
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  
+} */
+/* th,tr:nth-child(even) {background-color: #ECF9FF;}
+tr:nth-child(odd){
+  background-color: #FFFBEB;
+} */
+.filter{
+  float: left;
+  width: 15%;
+  height: 100%;
+  border: 2px solid grey;
+  margin-top: 40px;
+}
+/* table{
+  border-collapse: collapse;;
+} */
+p{
+  color:white;
+  padding: 30px;
+}
+
+
+/* .column-1{
+  background-color: #E9EDC9;
+  color: #2E4F4F;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+} */
+/* .column-1 {
+  background-color: #E9EDC9;
+  color: #2E4F4F;
+  width: 50px;
+  padding-bottom: 20%;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+} */
+
+.column-1 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: #F0997D;
+  color: #7D1E6A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px; /* Adjust the size of the circle as needed */
+  height: 50px; /* Adjust the size of the circle as needed */
+  vertical-align: middle;
+}
+
+
+.positive {
+  color:#ADE792;
+  font-weight: bold;
+}
+
+.negative {
+ color: #DF2E38;
+ font-weight: bold;
+}
+
+
+
+
+>>>>>>> Stashed changes
