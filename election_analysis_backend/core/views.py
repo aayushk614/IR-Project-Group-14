@@ -48,7 +48,7 @@ def query_csv(request):
                 response_data = {'result': 'Not Found'}
         return JsonResponse(response_data)
     else:
-        response_data = {'result': 'errorintesting'}
+        response_data = {'result': 'error'}
         return JsonResponse(response_data)
 
 
