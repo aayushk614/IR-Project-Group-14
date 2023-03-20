@@ -38,7 +38,7 @@
 }
 
 .main{
-  height: 1000px;
+  height: 1100px;
   width: 100%;
   /* background-color: yellow; */
   background:linear-gradient(45deg,#282A3A,#404258);
@@ -98,6 +98,12 @@ form .fa-search{
 } 
 th,td{
   text-align: center;
+  /*border: 1px solid white;*/
+  
+}
+
+.table td{
+  border-top:none !important;
 }
 /* 
 th,td{
@@ -116,6 +122,7 @@ tr:nth-child(odd){
   height: 100%;
   border: 2px solid grey;
   margin-top: 40px;
+  margin-left: 40px;
 }
 /* table{
   border-collapse: collapse;;
@@ -172,6 +179,70 @@ p{
  font-weight: bold;
 }
 
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 
+tbody:before {
+  content:"@";
+  display:block;
+  line-height:10px;
+  text-indent:-99999px;
+}
 
+.button_align{
+  text-align: -webkit-right !important;
+}
+
+.td_style{
+  width: 100% !important;
+}
+
+.tr_style{
+  border: 1px solid white !important;
+  
+}
+/*tr:before {
+  content:"@";
+  display:block;
+  line-height:10px;
+  text-indent:-99999px;
+}*/
+
+/*table{
+  border-collapse:inherit !important;
+}*/
+
+.border_style{
+  border-right: 2px solid white ;
+  vertical-align: middle !important;
+}
+
+.width_style1{
+  width: 70%;
+  text-align: -webkit-left ;
+  padding-left: 50px !important;
+}
+
+.width_style2{
+  width: 15%;
+}
+
+.button_style
+{
+  background: #c0e6f3;
+  border-radius: 20px;
+  border-color: black;
+  padding: 5px 10px;
+  width:110%
+}
+.button_style1
+{
+  background: #f5d1a2;
+  border-radius: 20px;
+  border-color: black;
+  padding: 5px 10px;
+  
+}
