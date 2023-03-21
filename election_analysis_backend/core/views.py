@@ -55,7 +55,7 @@ def query_csv(request):
                 each_tweet = []
 
             #Finding similarity (pass tweet_list variable)
-            find_similarity(tweet_list= tweets_list)
+            similarity_matrice, tweet_list = find_similarity(tweet_list= tweets_list)
 
             if flag == 1 and len(matched_tweets) > 0:
                 response_data = {'result': matched_tweets}
