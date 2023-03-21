@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import csv
 from django.http import JsonResponse
+from similarity import find_similarity
+
 
 '''def query_csv(request):
     
@@ -51,6 +53,9 @@ def query_csv(request):
                     matched_tweets.append(each_tweet)
                     tweets_list.append(row.get('Tweet'))
                 each_tweet = []
+
+            #Finding similarity (pass tweet_list variable)
+            find_similarity(tweet_list= tweets_list)
 
             if flag == 1 and len(matched_tweets) > 0:
                 response_data = {'result': matched_tweets}
