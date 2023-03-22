@@ -246,3 +246,17 @@ tbody:before {
   padding: 5px 10px;
   
 }
+.row_count_style{
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-bottom: 100px;
+}
+
+caption{
+  caption-side: top !important;
+  color: orange !important;
+  font-size: 30px;
+
+
+}

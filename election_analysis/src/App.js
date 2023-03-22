@@ -78,38 +78,41 @@ function QueryForm() {
                       <tbody>
                       {response.map((row, rowindex) => (
                         <tr className='tr_style' key={rowindex}>
-                          
-                          <td colspan = "5">
-                            <tr>
-                              <td className='border_style' rowspan = "2">
-                                {row[0]}
-                              </td>
-                              <td className='td_style' colspan = "4">
-                                {row[1]}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td className='width_style1'>
-                                <button className='button_style1'> 
-                                {row[2]}
-                                
+                          {rowindex !== response.length - 1 ?
+
+                            <td colspan = "5">
+                              <tr>
+                                <td className='border_style' rowspan = "2">
+                                  <span >{rowindex+1}</span><br></br><br></br>
+                                  <span className='row_count_style'>{row[0]}</span>
+                                </td>
+                                <td className='td_style' colspan = "4">
+                                  {row[1]}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className='width_style1'>
+                                  <button className='button_style1'> 
+                                  {row[2]}
                                   
-                                </button>
-                              </td>
-                              <td className='width_style2'>
-                                <button className='button_style'> 
-                                  
-                                  {row[3]}
-                                </button> 
-                              </td>
-                              <td className='width_style2'>
-                                <button className='button_style'> 
-                                  {row[4]}
-                                </button>
-                              </td>
-                            </tr> 
-                          </td>
-                        </tr>
+                                    
+                                  </button>
+                                </td>
+                                <td className='width_style2'>
+                                  <button className='button_style'> 
+                                    
+                                    {row[3]}
+                                  </button> 
+                                </td>
+                                <td className='width_style2'>
+                                  <button className='button_style'> 
+                                    {row[4]}
+                                  </button>
+                                </td>
+                              </tr> 
+                            </td>:null
+                          }
+                        </tr>   
                       ))}
                         {/*{response.map((row, rowindex) => (
                           <tr key={rowindex}>
@@ -129,10 +132,37 @@ function QueryForm() {
                           </tr>
                           ))}*/}
                       </tbody>
-                    </table>     
-                
+                    </table>   
+                    
               )}
-          
+           
+              <br></br><br></br>
+              {response !== null && (
+                <table className='table table-stripped'> 
+                  <caption>Similarity Matrix of tweets</caption>
+                    <thead>
+                      <tr>
+                        {response[response.length - 1][0].map((colHeader, index) => (
+                          index > 0 ? <th key={index}>{index}</th> : <th key={index}> </th>
+                        
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {response[response.length - 1].map((col, index) => (
+                        <tr key={index}>
+                          
+                          {col.map((val, subIndex) => (
+                            <td key={subIndex}>{val}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                </table>
+              )}
+
+
+
             </div>
           </div>
         </div>
