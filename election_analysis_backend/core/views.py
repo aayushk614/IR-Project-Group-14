@@ -41,7 +41,7 @@ def query_csv(request):
     
     array = [[1.65,2,3,4],[1,3,4,5],[2,4,5,6]]
     if query:
-        filename = 'core/Dummy_Tweets_hashtags1.csv'
+        filename = 'core/Dummy_Tweets_hashtags3.csv'
         with open(filename, 'r') as csvfile:
             #reader = csv.reader(csvfile)
             reader = csv.DictReader(csvfile)
@@ -62,6 +62,14 @@ def query_csv(request):
             #similarity_matrice = np.empty((len(tweets_list) , len(tweets_list)) , dtype= object)
             #rows, cols = (len(tweets_list)+1, len(tweets_list)+1)
             #similarity_matrice = [[0]*cols]*rows
+
+            # replacing the empty entries with N/A
+
+            for i in range(0 , len(matched_tweets)) :
+                for j in range(0 , len(matched_tweets[i])):
+                    #print(len(ans[i][j]))
+                    if len(matched_tweets[i][j]) == 0 :
+                        matched_tweets[i][j] = 'N/A'
             
             #Finding similarity (pass tweet_list variable)
             similarity_matrice = find_similarity(tweet_list= tweets_list)
