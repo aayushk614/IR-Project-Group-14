@@ -11,6 +11,31 @@ function QueryForm() {
   const [query, setQuery] = useState('');
   const [response, setResponse] = useState(null);
 
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [filteredResponse, setFilteredResponse] = useState(null);
+
+  const dropdownOptions = ['Aligarh', 'Banglore', 'Chandigarh', 'Chennai', 'Chikkamagaluru', 'Delhi', 'Gandhinagar', 'Gorkhaland', 'Gujarat', 'Gujrat', 'Guwahati', 'Haryana', 'Hyderabad', 'Jharkhand', 'Karnataka', 'Kolkata', 'Madhya Pradesh', 'Maharashtra', 'Mumbai', 'New Delhi', 'Noida', 'Odisha', 'Pondicherry', 'Pune', 'Rajasthan', 'Saharanpur', 'Tamil Nadu', 'Una', 'Uttar Pradesh'];
+  const handleDropdownChange = (event) => {
+    setSelectedOption(event.target.value);
+  }
+
+  
+
+  const handleCheckboxChange1 = () => {
+    setIsChecked1(!isChecked1);
+  };
+
+  const handleCheckboxChange2 = () => {
+    setIsChecked2(!isChecked2);
+  };
+
+  const handleCheckboxChange3 = () => {
+    setIsChecked3(!isChecked3);
+  };
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     //console.log("the query being sent" + query)
@@ -22,6 +47,7 @@ function QueryForm() {
       const response = await axios.get(url);
 	  console.log(response);
 	  setResponse(response.data.result);
+    setFilteredResponse(response.data.result);
     setQuery('');
       //setResponse(response.data.result[0][1]);  this is to get value of each column separately 
     } catch (error) {
@@ -29,6 +55,34 @@ function QueryForm() {
       setResponse('error');
     }
   };
+  const handleFilter = () => {
+    
+    let filteredData = response;
+  
+    // Apply filter based on selectedOption
+    if (selectedOption) {
+      filteredData = filteredData.filter(row => row[2] === selectedOption);
+    }
+  
+    // Apply filter based on checkboxes
+    const selectedParties = [];
+    if (isChecked1) {
+      selectedParties.push("BJP");
+    }
+    if (isChecked2) {
+      selectedParties.push("Congress");
+    }
+    if (isChecked3) {
+      selectedParties.push("Others");
+    }
+  
+    if (selectedParties.length > 0) {
+      filteredData = filteredData.filter(row => selectedParties.includes(row[5]));
+    }
+  
+    // Set filtered data
+    setFilteredResponse(filteredData);
+    };
 
   return (
     <div className='container-fluid '>
@@ -44,10 +98,33 @@ function QueryForm() {
           </div>
           <div className='row'>
             <div className='filter col-xs-3 col-sm-3 col-md-3 col-lg-3'>
-              <p>Filter 1</p><br></br>
-              <p>Filter 2</p><br></br>
-              <p>Filter 3</p>
-            </div>
+           
+            <label htmlFor='dropdown'>Location :</label>
+      <select id='dropdown' value={selectedOption} onChange={handleDropdownChange}>
+        <option value=''>Select an option</option>
+        {dropdownOptions.map((option) => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
+     <label>Political Parties :
+      <label className="container">
+        <input type="checkbox" checked={isChecked1} onChange={handleCheckboxChange1}/>
+        <span class="checkmark"></span>BJP 
+      </label>
+      <label className="container">
+      <input type="checkbox" checked={isChecked2} onChange={handleCheckboxChange2}/>
+        Congress
+      <span class="checkmark"></span>
+      </label>
+      <label className="container">
+      <input type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
+        Others
+      <span class="checkmark"></span>
+      </label>
+      </label>
+      <div className='b'><button className="btn1" type="submit"  onClick={handleFilter}>Filter</button></div>
+
+         </div>
                               {/* <div className='response'>
                           {response !== null && (
                             <div>
@@ -64,7 +141,7 @@ function QueryForm() {
 
             <div className='response col-xs-8 col-sm-8 col-md-8 col-lg-8'>
             
-              {response !== null && (
+              {filteredResponse && (
                 <table className='table table-stripped'>
                       <thead className='thead-dark'>
                         {/*<tr>
@@ -76,7 +153,7 @@ function QueryForm() {
               </tr>*/}
                       </thead>
                       <tbody>
-                      {response.map((row, rowindex) => (
+                      {filteredResponse.map((row, rowindex) => (
                         <tr className='tr_style' key={rowindex}>
                           {rowindex !== response.length - 1 ?
 
@@ -94,9 +171,11 @@ function QueryForm() {
                                 <td className='width_style1'>
                                   <button className='button_style1'> 
                                   {row[2]}
-                                  
-                                    
                                   </button>
+                                  </td>
+                                  <td className='width_style1'>
+                                  <button className='button_style1'>{row[5]}</button>
+                              
                                 </td>
                                 <td className='width_style2'>
                                   <button className='button_style'> 

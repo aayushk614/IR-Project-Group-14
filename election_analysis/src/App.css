@@ -105,7 +105,33 @@ th,td{
 .table td{
   border-top:none !important;
 }
+label{
+  color:white;
+  padding: 10px;
+  display:block;
+}
+
+.btn1{
+  /* display: block; */
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: tomato;
+  margin-bottom: 10px; 
+  border-radius: 3px;
+}
+.b{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
 /* 
+
 th,td{
   font-weight: bold;
   text-align: center;
@@ -229,6 +255,47 @@ tbody:before {
 .width_style2{
   width: 15%;
 }
+/* css for dropdown menu */
+#dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #444;
+  font-size: 14px;
+  padding: 8px 10px;
+  width: 180px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#dropdown option {
+  background-color: #fff;
+  color: #444;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+@media only screen and (max-width: 600px) {
+  #dropdown {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px 1px;
+    font-weight: normal;
+  }
+}
+/* Css for checboxes */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 
 .button_style
 {
