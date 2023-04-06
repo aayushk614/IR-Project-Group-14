@@ -73,8 +73,12 @@ def query_csv(request):
             
             #Finding similarity (pass tweet_list variable)
             similarity_matrice = find_similarity(tweet_list= tweets_list)
-            idx_col = np.arange(similarity_matrice.shape[0]).reshape(-1, 1)
-            new_similarity_matrice = np.hstack([idx_col+1, similarity_matrice])
+            import numpy as np
+
+            similarity_matrice_rounded = np.round(similarity_matrice, 3)
+
+            idx_col = np.arange(similarity_matrice_rounded.shape[0]).reshape(-1, 1)
+            new_similarity_matrice = np.hstack([idx_col+1, similarity_matrice_rounded])
             arr1 = new_similarity_matrice.tolist()
             
 
