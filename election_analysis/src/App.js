@@ -88,43 +88,54 @@ function QueryForm() {
     <div className='container-fluid '>
       <div className='main'>
         <div className='blue-part'>
-          
-          <div className='search'>
-            <form onSubmit={handleSubmit}>
-              <i className="fa fa-search" aria-hidden="true"></i>
-              <input className="query_inp" placeholder="Write your query here" type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-              <button className="btn" type="submit">Submit</button>
-            </form> 
+          <div className='row'>
+
+            <div className='summary col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+              <a target= '_blank' href='http://localhost:3000'>
+                <button className='summary_button'>
+                  Summary
+                </button>
+              </a>
+            </div>
+
+            <div className='search  col-xs-6 col-sm-6 col-md-6 col-lg-6'>
+              <form onSubmit={handleSubmit}>
+                <i className="fa fa-search" aria-hidden="true"></i>
+                <input className="query_inp" placeholder="Write your query here" type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
+                <button className="btn" type="submit">Submit</button>
+              </form> 
+            </div>
+
           </div>
           <div className='row'>
             <div className='filter col-xs-3 col-sm-3 col-md-3 col-lg-3'>
            
-            <label htmlFor='dropdown'>Location :</label>
-      <select id='dropdown' value={selectedOption} onChange={handleDropdownChange}>
-        <option value=''>Select an option</option>
-        {dropdownOptions.map((option) => (
-          <option key={option} value={option}>{option}</option>
-        ))}
-      </select>
-     <label>Political Parties :
-      <label className="container">
-        <input type="checkbox" checked={isChecked1} onChange={handleCheckboxChange1}/>
-        <span class="checkmark"></span>BJP 
-      </label>
-      <label className="container">
-      <input type="checkbox" checked={isChecked2} onChange={handleCheckboxChange2}/>
-        Congress
-      <span class="checkmark"></span>
-      </label>
-      <label className="container">
-      <input type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
-        Others
-      <span class="checkmark"></span>
-      </label>
-      </label>
-      <div className='b'><button className="btn1" type="submit"  onClick={handleFilter}>Filter</button></div>
+              <label htmlFor='dropdown'>Location :</label>
+              <select id='dropdown' value={selectedOption} onChange={handleDropdownChange}>
+                <option value=''>Select an option</option>
+                {dropdownOptions.map((option) => (
+                <option key={option} value={option}>{option}</option>
+                ))}
+              </select>
+              <label>Political Parties :
+                <label className="container">
+                  <input type="checkbox" checked={isChecked1} onChange={handleCheckboxChange1}/>
+                  <span class="checkmark"></span>BJP 
+                </label>
+                <label className="container">
+                  <input type="checkbox" checked={isChecked2} onChange={handleCheckboxChange2}/>
+                    Congress
+                  <span class="checkmark"></span>
+                </label>
+                <label className="container">
+                  <input type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
+                    Others
+                  <span class="checkmark"></span>
+                </label>
+              </label>
+                <div className='b'><button className="btn1" type="submit"  onClick={handleFilter}>Filter</button></div>
 
-         </div>
+            </div>
                               {/* <div className='response'>
                           {response !== null && (
                             <div>
@@ -229,7 +240,7 @@ function QueryForm() {
                     </thead>
                     <tbody>
                       {response[response.length - 1].map((col, index) => (
-                        <tr key={index}>
+                        <tr key={index} className = 'similarity_table'>
                           
                           {col.map((val, subIndex) => (
                             <td key={subIndex}>{val}</td>

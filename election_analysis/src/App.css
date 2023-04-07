@@ -327,3 +327,35 @@ caption{
 
 
 }
+
+.similarity_table :hover{
+  background-color: yellow;
+}
+
+.summary_button{
+  margin-top: 30px;
+  border-radius: 10px;
+  width:150px;
+  padding:5px;
+  color:white !important;
+  background-color : tomato;
+  font-weight: bold;
+  border: 2px solid tomato;
+
+
+}
+
+.summary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.summary_button:hover{
+  color:tomato !important;
+  background-color: white !important;
+  text-decoration: none !important;
+  border: 2px solid white;
+  
+}
