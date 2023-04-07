@@ -113,7 +113,7 @@ label{
 
 .btn1{
   /* display: block; */
-  padding: 10px 10px;
+  padding: 10px 20px;
   border: none;
   outline: none;
   color: #fff;
@@ -121,8 +121,17 @@ label{
   cursor: pointer;
   background: tomato;
   margin-bottom: 10px; 
-  border-radius: 3px;
+  border-radius: 10px;
+  font-weight: bold;
 }
+
+.btn1:hover
+{
+  color:tomato !important;
+  background-color: white !important;
+  border: 2px solid white;
+}
+
 .b{
 display: flex;
 flex-direction: column;
@@ -345,11 +354,6 @@ caption{
 
 }
 
-.summary{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 
 .summary_button:hover{
@@ -358,4 +362,34 @@ caption{
   text-decoration: none !important;
   border: 2px solid white;
   
+}
+
+.summary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label_style
+{
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+  font-size: 20px;
+}
+
+.dropdown_state{
+  width: -webkit-fill-available !important;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.label_style_text
+{
+  font-weight: normal !important;
+  font-size: 15px;
+}
+
+.checkbox_style
+{
+  margin-right: 10px;
 }

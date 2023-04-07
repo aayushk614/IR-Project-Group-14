@@ -110,25 +110,25 @@ function QueryForm() {
           <div className='row'>
             <div className='filter col-xs-3 col-sm-3 col-md-3 col-lg-3'>
            
-              <label htmlFor='dropdown'>Location :</label>
-              <select id='dropdown' value={selectedOption} onChange={handleDropdownChange}>
+              <label className='label_style' htmlFor='dropdown'>Location :</label>
+              <select className='dropdown_state' id='dropdown' value={selectedOption} onChange={handleDropdownChange}>
                 <option value=''>Select an option</option>
                 {dropdownOptions.map((option) => (
                 <option key={option} value={option}>{option}</option>
                 ))}
               </select>
-              <label>Political Parties :
-                <label className="container">
-                  <input type="checkbox" checked={isChecked1} onChange={handleCheckboxChange1}/>
+              <label className='label_style' >Political Parties :
+                <label className="container label_style_text">
+                  <input className='checkbox_style' type="checkbox" checked={isChecked1} onChange={handleCheckboxChange1}/>
                   <span class="checkmark"></span>BJP 
                 </label>
-                <label className="container">
-                  <input type="checkbox" checked={isChecked2} onChange={handleCheckboxChange2}/>
+                <label className="container label_style_text">
+                  <input className='checkbox_style' type="checkbox" checked={isChecked2} onChange={handleCheckboxChange2}/>
                     Congress
                   <span class="checkmark"></span>
                 </label>
-                <label className="container">
-                  <input type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
+                <label className="container label_style_text">
+                  <input className='checkbox_style' type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
                     Others
                   <span class="checkmark"></span>
                 </label>
