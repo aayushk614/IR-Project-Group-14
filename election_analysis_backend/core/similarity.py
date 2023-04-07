@@ -1,3 +1,4 @@
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -43,4 +44,6 @@ def find_similarity(tweet_list):
     #     for j in range(i+1, len(tweet_list)):
     #         print(f"Cosine similarity between '{tweet_list[i]}' and '{tweet_list[j]}': {cosine_similarities[i][j]}")
     
+
     return cosine_similarities
+
