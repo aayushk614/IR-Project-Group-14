@@ -44,4 +44,6 @@ def find_similarity(tweet_list):
     #     for j in range(i+1, len(tweet_list)):
     #         print(f"Cosine similarity between '{tweet_list[i]}' and '{tweet_list[j]}': {cosine_similarities[i][j]}")
     
-    return cosine_similarities, tweet_list
+
+    return cosine_similarities
+
