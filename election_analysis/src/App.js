@@ -228,10 +228,10 @@ function QueryForm() {
            
               <br></br><br></br>
               {response !== null && (
-                <table className='table table-stripped'> 
+                <table className='table table-stripped table_border'> 
                   <caption>Similarity Matrix of tweets</caption>
                     <thead>
-                      <tr>
+                      <tr className='tr_similarity_header'>
                         {response[response.length - 1][0].map((colHeader, index) => (
                           index > 0 ? <th key={index}>{index}</th> : <th key={index}> </th>
                         
@@ -240,7 +240,7 @@ function QueryForm() {
                     </thead>
                     <tbody>
                       {response[response.length - 1].map((col, index) => (
-                        <tr key={index} className = 'similarity_table'>
+                        <tr key={index} className = 'similarity_table tr_similarity'>
                           
                           {col.map((val, subIndex) => (
                             <td key={subIndex}>{val}</td>
