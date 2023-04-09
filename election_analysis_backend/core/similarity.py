@@ -7,30 +7,6 @@ import numpy as np
 
 
 
-
-
-
-# Define the sentences to compare
-sentences = [
-    "The quick brown fox jumps over the lazy dog",
-    "The lazy dog is jumped over by a quick brown fox",
-    "I like to eat pizza",
-    "Pizza is my favorite food",
-    "The quick brown fox ate pizza"
-]
-
-# # Initialize the count vectorizer
-# vectorizer = CountVectorizer().fit_transform(sentences)
-
-# # Calculate the cosine similarity between all pairs of sentences
-# cosine_similarities = cosine_similarity(vectorizer)
-
-# # Print the results
-# for i in range(len(sentences)):
-#     for j in range(i+1, len(sentences)):
-#         print(f"Cosine similarity between '{sentences[i]}' and '{sentences[j]}': {cosine_similarities[i][j]}")
-
-
 def find_similarity(tweet_list):
 
     # Initialize the count vectorizer
@@ -47,3 +23,28 @@ def find_similarity(tweet_list):
 
     return cosine_similarities
 
+
+# Define cosine similarity function
+def cosine_similarity_new(vec1, vec2):
+    dot_product = np.dot(vec1, vec2)
+    norm1 = np.linalg.norm(vec1)
+    norm2 = np.linalg.norm(vec2)
+    return dot_product / (norm1 * norm2)
+
+
+def find_similarity_vec(tweet_list):
+
+    # Initialize the count vectorizer
+    vectorizer = CountVectorizer().fit_transform(tweet_list)
+    X = vectorizer
+    X = X.toarray()
+
+    # Calculate pairwise cosine similarity
+    n_tweets = len(tweet_list)
+    cosine_sim = np.zeros((n_tweets, n_tweets))
+    for i in range(n_tweets):
+        for j in range(n_tweets):
+            cosine_sim[i][j] = cosine_similarity_new(X[i], X[j])
+
+
+    return cosine_sim

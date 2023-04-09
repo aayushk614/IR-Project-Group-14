@@ -60,12 +60,6 @@ def query_csv(request):
                 each_tweet = []
 
 
-            #matched_tweets.append(array)
-
-            #similarity_matrice = np.empty((len(tweets_list) , len(tweets_list)) , dtype= object)
-            #rows, cols = (len(tweets_list)+1, len(tweets_list)+1)
-            #similarity_matrice = [[0]*cols]*rows
-
             # replacing the empty entries with N/A
 
             for i in range(0 , len(matched_tweets)) :
@@ -74,20 +68,18 @@ def query_csv(request):
                     if len(matched_tweets[i][j]) == 0 :
                         matched_tweets[i][j] = 'N/A'
             
-            #Finding similarity (pass tweet_list variable)
-            similarity_matrice = find_similarity(tweet_list= tweets_list)
-            import numpy as np
+            #Finding similarity between fetched tweets (passing tweet_list variable)
+            similarity_matrice = find_similarity_vec(tweet_list = tweets_list)
 
+            #Rouding off decimal values to 3DP.
             similarity_matrice_rounded = np.round(similarity_matrice, 3)
 
             idx_col = np.arange(similarity_matrice_rounded.shape[0]).reshape(-1, 1)
             new_similarity_matrice = np.hstack([idx_col+1, similarity_matrice_rounded])
-            arr1 = new_similarity_matrice.tolist()
-            
+            new_sim_matrix_list = new_similarity_matrice.tolist()
 
-            matched_tweets.append(arr1)
+            matched_tweets.append(new_sim_matrix_list)
             
-
 
             if flag == 1 and len(matched_tweets) > 0:
                 response_data = {'result': matched_tweets}
@@ -102,8 +94,5 @@ def query_csv(request):
 
 
 
-
-
-# Create your views here.
 
 
