@@ -370,6 +370,16 @@ caption{
   justify-content: center;
 }
 
+@media only screen and (max-width: 450px)
+{
+  .summary1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
 .label_style
 {
   margin-bottom: 10px !important;

@@ -90,13 +90,22 @@ function QueryForm() {
         <div className='blue-part'>
           <div className='row'>
 
-            <div className='summary col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+            <div className='summary col-xs-2 col-sm-2 col-md-2 col-lg-2'>
               <a target= '_blank' href='http://localhost:3000'>
                 <button className='summary_button'>
-                  Summary
+                  Sentiment 
                 </button>
               </a>
             </div>
+
+            <div className='summary1 col-xs-2 col-sm-2 col-md-2 col-lg-2'>
+              <a target= '_blank' href='http://localhost:3000'>
+                <button className='summary_button'>
+                  Manipulation
+                </button>
+              </a>
+            </div>
+            
 
             <div className='search  col-xs-6 col-sm-6 col-md-6 col-lg-6'>
               <form onSubmit={handleSubmit}>
