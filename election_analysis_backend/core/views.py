@@ -4,32 +4,6 @@ from django.http import JsonResponse
 from .similarity import *
 import numpy as np 
 
-'''def query_csv(request):
-    
-    query = request.GET.get('query', None)
-    flag = 0
-    matched_tweets = []
-    #print("the query received" + query)
-    if query: 
-        filename = 'core/Dummy_Tweets.csv'
-        #with open('core/Dummy_Tweets.csv', newline='') as csvfile:
-        with open(filename, 'r') as csvfile:
-            reader = csv.reader(csvfile)
-            for row in reader:
-                if query in row:
-                    flag = 1
-                    #response_data = {'result': row}
-                    matched_tweets.append(row)
-            if flag == 1 :
-                response_data = {'result': matched_tweets}
-        if flag == 0 :
-            response_data = {'result': 'Not Found'}
-    else:
-        response_data = {'result': 'errorintesting'}
-
-    
-    
-    return JsonResponse(response_data)'''
 
 def query_csv(request):
     
@@ -41,7 +15,7 @@ def query_csv(request):
     
     array = [[1.65,2,3,4],[1,3,4,5],[2,4,5,6]]
     if query:
-        filename = 'core/Dummy_Tweets_hashtags3.csv'
+        filename = 'core/Final_Tweet_Dataset.csv'
         with open(filename, 'r') as csvfile:
             #reader = csv.reader(csvfile)
             reader = csv.DictReader(csvfile)
@@ -57,12 +31,7 @@ def query_csv(request):
                     tweets_list.append(row.get('Tweet'))
                 each_tweet = []
 
-            #matched_tweets.append(array)
-
-            #similarity_matrice = np.empty((len(tweets_list) , len(tweets_list)) , dtype= object)
-            #rows, cols = (len(tweets_list)+1, len(tweets_list)+1)
-            #similarity_matrice = [[0]*cols]*rows
-
+            
             # replacing the empty entries with N/A
 
             for i in range(0 , len(matched_tweets)) :

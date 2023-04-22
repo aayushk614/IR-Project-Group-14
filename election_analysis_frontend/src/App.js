@@ -198,11 +198,11 @@ function QueryForm() {
                                     {row[5]}
                                   </button>
                                 </td>
-                                {/*<td className='width_style1'>
+                                <td className='width_style1'>
                                   <button className='button_style1'>
-                                    {row[5]}
+                                    {row[6]}
                                   </button>
-                          </td>*/}
+                                </td>
                                 <td className='width_style2'>
                                   <button className='button_style'> 
                                     
