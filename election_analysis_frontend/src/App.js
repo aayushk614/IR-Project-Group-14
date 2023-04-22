@@ -91,7 +91,7 @@ function QueryForm() {
           <div className='row'>
 
             <div className='summary col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-              <a target= '_blank' href='http://localhost:3000'>
+              <a target= '_blank' href='http://localhost:8501'>
                 <button className='summary_button'>
                   Sentiment 
                 </button>
@@ -99,7 +99,7 @@ function QueryForm() {
             </div>
 
             <div className='summary1 col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-              <a target= '_blank' href='http://localhost:3000'>
+              <a target= '_blank' href='http://localhost:8502'>
                 <button className='summary_button'>
                   Manipulation
                 </button>
