@@ -312,7 +312,8 @@ tbody:before {
   border-radius: 20px;
   border-color: black;
   padding: 5px 10px;
-  width:110%
+  /*width:110%*/
+  width:75px;
 }
 .button_style1
 {
@@ -320,6 +321,7 @@ tbody:before {
   border-radius: 20px;
   border-color: black;
   padding: 5px 10px;
+  width:110px;
   
 }
 .row_count_style{
@@ -368,6 +370,16 @@ caption{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 450px)
+{
+  .summary1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 }
 
 .label_style
