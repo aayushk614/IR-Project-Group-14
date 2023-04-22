@@ -60,9 +60,9 @@ def main():
         
         #Display prediction result
         if prediction == 1:
-            st.write('This tweet is classified as manipulated.')
-        else:
             st.write('This tweet is classified as not manipulated.')
+        else:
+            st.write('This tweet is classified as manipulated.')
 
 # Run the Streamlit app
 if __name__ == '__main__':

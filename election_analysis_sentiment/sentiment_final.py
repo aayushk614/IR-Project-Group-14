@@ -12,7 +12,7 @@ from math import floor
 from textblob import TextBlob
 import altair as alt
 
-from tweet_list import fetch_tweet, retrieve_tweet
+from tweet_list import fetch_tweet
 from analyze_tweets import analyze_tweets
 
 st.set_page_config(page_title="Sentiment Summarizer")
@@ -23,11 +23,10 @@ a, b = st.columns([1, 10])
 
 with a:
     st.text("")
-    st.image("logo.png", width=50)
 with b:
-    st.title("Twitter Sentiment Analyzer")
+    st.title("2019 General Elections Tweets Analyzer")
 
-st.write("This page shows the sentiment summary of the fetched tweets from previous homepage.")
+st.write("This page shows the summary of the tweets from previous homepage.")
 
 def test_app(tweetlist):
 
