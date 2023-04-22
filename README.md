@@ -43,3 +43,15 @@ And run the server using
 `cd election_analysis`
 2. Run the following command
 `npm install npm start`
+
+
+## Setting Up the sentiment (Streamlit):
+
+1. Download the main folder from git repo . Then enter the ‘election_analysis_sentiment’ folder:
+`cd election_analysis_sentiment`
+2. Install Streamlit using the following command
+`pip3 install streamlit`
+3. Run the following command in the terminal
+`streamlit run sentiment_final.py`
+4. Run the following command in another terminal
+`streamlit run manipulation_final.py`
