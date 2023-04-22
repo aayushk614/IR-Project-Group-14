@@ -1,4 +1,4 @@
-tweets = ["congress made vemula nation talk point even though doubt case amp vemula dalit itself stop bjp make ramalingam case attain nation scale amp chang dalit discours take one remark pm modi make happen",
+'''tweets = ["congress made vemula nation talk point even though doubt case amp vemula dalit itself stop bjp make ramalingam case attain nation scale amp chang dalit discours take one remark pm modi make happen",
 "bjp win battl past month bengal pm modi arriv win biggest battl announc warcri upcom war tmc elect modisonarbangla",
 "inclusivemind ark bjpindia rahul gandhi bjp think cellchatumediacroniesscrit writer andbhakt crore speach give victori then late atal bihari vajpeyi much better shine india",
 "senior congress leader manishtewari jpc definit next parliament parallel crimin investig process go go away rafal rafalenot",
@@ -20,4 +20,23 @@ tweets = ["congress made vemula nation talk point even though doubt case amp vem
 
 
 def fetch_tweet():
-    return tweets
+    return tweets'''
+
+import csv
+
+def retrieve_tweet(query):
+  tweets_list = []
+  filename = 'Final_Tweet_Dataset.csv'
+  column_name = 'Id'
+  with open(filename, 'r') as csvfile:
+      #reader = csv.reader(csvfile)
+      reader = csv.DictReader(csvfile)
+      flag = 0
+      for row in reader:
+          #if query in row:
+          if row[column_name] == query:
+            flag = 1
+            #print(type(row)) 
+            tweets_list.append(row.get('Tweet'))
+
+  return tweets_list

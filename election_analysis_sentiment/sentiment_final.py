@@ -12,8 +12,9 @@ from math import floor
 from textblob import TextBlob
 import altair as alt
 
-from tweet_list import fetch_tweet
+from tweet_list import retrieve_tweet
 from analyze_tweets import analyze_tweets
+
 
 st.set_page_config(page_title="Sentiment Summarizer")
 
@@ -113,7 +114,7 @@ def test_app(tweetlist):
     results = analyze_tweets(tweetlist)
 
 
-    st.write("## Sentiment from the most recent ", len(tweets)," tweets")
+    st.write("## Sentiment from the most recent ", len(tweetlist)," tweets")
 
 
     # fetching sentiment results
@@ -144,11 +145,13 @@ def test_app(tweetlist):
         ]
     )
 
-    a, b = st.columns(2)
-    adjustment_factor = a.slider("Prioritize long expressions", 0.0, 1.0, 0.2, 0.001)
+    #a, b = st.columns(2)
+    #adjustment_factor = a.slider("Prioritize long expressions", 0.0, 1.0, 0.2, 0.001)
+    adjustment_factor = 0.2
 
     max_threshold = terms["count"].max()
-    threshold = b.slider("Threshold", 0.0, 1.0, 0.3) * max_threshold
+    #threshold = b.slider("Threshold", 0.0, 1.0, 0.3) * max_threshold
+    threshold = 0.3 * max_threshold
 
     weights = (terms["num_words"] * adjustment_factor * (terms["count"] - 1)) + terms[
         "count"
@@ -167,30 +170,7 @@ def test_app(tweetlist):
         use_container_width=True,
     )
 
-    with st.expander("Show raw data", expanded=False):
-
-        st.markdown("## Raw data")
-        st.markdown("")
-
-        def draw_count(label, df, init_filter_divider):
-            xmax = int(floor(df["count"].max()))
-            x = st.slider(label, 0, xmax, xmax // init_filter_divider)
-            df = df[df["count"] > x]
-            df = df.sort_values(by="count", ascending=False)
-            df
-            " "
-
-        if st.checkbox("Show term counts"):
-            draw_count("Term count cut-off", terms, 5)
-
-        if st.checkbox("Show word counts"):
-            draw_count("Word count cut-off", results["word_counts"], 5)
-
-        if st.checkbox("Show bigram counts"):
-            draw_count("Bigram count cut-off", results["bigram_counts"], 3)
-
-        if st.checkbox("Show trigram counts"):
-            draw_count("Trigram count cut-off", results["trigram_counts"], 2)
+    
 
 
     with st.expander("Cosine similarity", expanded=False):
@@ -257,11 +237,11 @@ def test_app(tweetlist):
 
 def main():
     user_input = st.text_input("Enter the hashtag:")
-    #list = retrieve_tweet(user_input)
+    list = retrieve_tweet(user_input)
 
     
     if st.button("Submit"):
-        list = fetch_tweet()
+        #list = fetch_tweet()
         test_app(list)
 
 if __name__ == '__main__':
