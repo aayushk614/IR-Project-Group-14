@@ -2,11 +2,11 @@
 
 ## Branch reference for evaluation:
 
-baseline: Refer this branch for baseline evaluation.
+`baseline`: Refer this branch for baseline evaluation.
 
-mid-review: Refer this branch for Mid-Review evaluation.
+`mid-review`: Refer this branch for Mid-Review evaluation.
 
-main: Refer this branch for Final Project evaluation.
+`main`: Refer this branch for Final Project evaluation.
 
 
 
