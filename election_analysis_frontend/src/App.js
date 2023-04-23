@@ -17,7 +17,13 @@ function QueryForm() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [filteredResponse, setFilteredResponse] = useState(null);
 
-  const dropdownOptions = ['Aligarh', 'Banglore', 'Chandigarh', 'Chennai', 'Chikkamagaluru', 'Delhi', 'Gandhinagar', 'Gorkhaland', 'Gujarat', 'Gujrat', 'Guwahati', 'Haryana', 'Hyderabad', 'Jharkhand', 'Karnataka', 'Kolkata', 'Madhya Pradesh', 'Maharashtra', 'Mumbai', 'New Delhi', 'Noida', 'Odisha', 'Pondicherry', 'Pune', 'Rajasthan', 'Saharanpur', 'Tamil Nadu', 'Una', 'Uttar Pradesh'];
+  const dropdownOptions = ['Delhi' , 'Maharashtra' , 'Andhra Pradesh' ,'Karnataka' ,'Bihar' ,'West Bengal',
+  'Assam' ,'Tamil Nadu', 'Uttar Pradesh' ,'Madhya Pradesh', 'Chandigarh',
+  'Jharkhand', 'Gujarat', 'Kerala', 'Haryana' ,'Rajasthan', 'Punjab',
+  'Jammu & Kashmir', 'Goa' ,'Chhattisgarh' ,'Orissa', 'Tripura', 'Telangana',
+  'Mizoram', 'Daman & Diu', 'Uttaranchal' ,'Nagaland', 'Pondicherry', 'Manipur',
+  'Arunachal Pradesh', 'Andaman & Nicobar Islands' ,'Himachal Pradesh',
+  'Sikkim' ,'Meghalaya'];
   const handleDropdownChange = (event) => {
     setSelectedOption(event.target.value);
   }
@@ -73,7 +79,7 @@ function QueryForm() {
       selectedParties.push("Congress");
     }
     if (isChecked3) {
-      selectedParties.push("Others");
+      selectedParties.push("Other");
     }
   
     if (selectedParties.length > 0) {
@@ -138,7 +144,7 @@ function QueryForm() {
                 </label>
                 <label className="container label_style_text">
                   <input className='checkbox_style' type="checkbox" checked={isChecked3} onChange={handleCheckboxChange3}/>
-                    Others
+                    Other
                   <span class="checkmark"></span>
                 </label>
               </label>
