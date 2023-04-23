@@ -28,6 +28,7 @@ def retrieve_tweet(query):
   tweets_list = []
   filename = 'Final_Tweet_Dataset.csv'
   column_name = 'Id'
+  count =0
   with open(filename, 'r') as csvfile:
       #reader = csv.reader(csvfile)
       reader = csv.DictReader(csvfile)
@@ -36,7 +37,10 @@ def retrieve_tweet(query):
           #if query in row:
           if row[column_name] == query:
             flag = 1
-            #print(type(row)) 
+            #print(type(row))
+            if(count == 100):
+              break
+            count = count + 1 
             tweets_list.append(row.get('Tweet'))
 
   return tweets_list

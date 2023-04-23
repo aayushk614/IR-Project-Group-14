@@ -15,11 +15,14 @@ def query_csv(request):
     
     array = [[1.65,2,3,4],[1,3,4,5],[2,4,5,6]]
     if query:
+        
         filename = 'core/Final_Tweet_Dataset.csv'
+        #filename = 'core/TryCSV.csv'
         with open(filename, 'r') as csvfile:
             #reader = csv.reader(csvfile)
             reader = csv.DictReader(csvfile)
             flag = 0
+            count = 0
             for row in reader:
                 #if query in row:
                 if row[column_name] == query:
@@ -27,6 +30,9 @@ def query_csv(request):
                     for key in row:
                         #print(key)
                         each_tweet.append(row.get(key))
+                    if(count == 100):
+                        break
+                    count = count+1
                     matched_tweets.append(each_tweet)
                     tweets_list.append(row.get('Tweet'))
                 each_tweet = []
