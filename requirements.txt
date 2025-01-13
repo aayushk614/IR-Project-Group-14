@@ -1,0 +1,12 @@
+Django==4.1.7
+djangorestframework==3.14.0
+django-cors-headers==3.13.0
+scikit-learn==1.2.2
+numpy==1.24.2
+pandas==1.5.3
+streamlit==1.18.1
+textblob==0.17.1
+nltk==3.8.1
+altair==4.2.2
+pytagcloud==0.3.5
+matplotlib==3.7.1
