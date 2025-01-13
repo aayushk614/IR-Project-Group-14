@@ -8,11 +8,13 @@
 
 `main`: Refer this branch for Final Project evaluation.
 
+## Overview
 
+This project aims to analyze tweets related to the 2019 General Elections in India. The analysis includes sentiment analysis, tweet clustering, and manipulation detection. The project is divided into three main components: back-end (Django), front-end (Reactjs), and sentiment analysis (Streamlit).
 
 ## Setting Up the back-end (Django): 
 
-Step 1:Install the virtualenv package
+Step 1: Install the virtualenv package
 `python3 -m pip install --user virtualenv`
 
 Step 2: Create a virtual environment
@@ -29,12 +31,14 @@ Step 4: Download the ‘election_analysis_backend’ folder from the Git repo an
 Step 5: Change directory to ‘election_analysis_backend’ folder using
 `cd election_analysis_backend`
 
-Step 6: Run the server using
+Step 6: Install the required dependencies by running
+`pip install -r requirements.txt`
+
+Step 7: Run the server using
 `python manage.py runserver`
 
-
-If you have already set up the virtual environment once the go to the folder where the environment is created and enter the following command to enter the already created virtual environment
-source env/bin/activate
+If you have already set up the virtual environment once, go to the folder where the environment is created and enter the following command to enter the already created virtual environment
+`source env/bin/activate`
 
 Then enter the ‘env’ folder using
 `cd env`
@@ -45,22 +49,22 @@ Then enter the ‘election_analysis_backend’ folder using
 And run the server using
 `python manage.py runserver`
 
-
 ## Setting Up the front-end (Reactjs):
 
-1. Download the ‘election_analysis’ folder from git repo . Then enter the ‘election_analysis’ folder:
+1. Download the ‘election_analysis’ folder from the Git repo. Then enter the ‘election_analysis’ folder:
 `cd election_analysis`
 2. Run the following command
-`npm install npm start`
+`npm install`
+3. Start the development server by running
+`npm start`
 
+## Setting Up the sentiment analysis (Streamlit):
 
-## Setting Up the sentiment (Streamlit):
-
-1. Download the main folder from git repo . Then enter the ‘election_analysis_sentiment’ folder:
+1. Download the main folder from the Git repo. Then enter the ‘election_analysis_sentiment’ folder:
 `cd election_analysis_sentiment`
 2. Install Streamlit using the following command
 `pip3 install streamlit`
-3. Run the following command in the terminal
+3. Run the sentiment analysis app by executing the following command in the terminal
 `streamlit run sentiment_final.py`
-4. Run the following command in another terminal
+4. Run the manipulation detection app by executing the following command in another terminal
 `streamlit run manipulation_final.py`
